@@ -81,6 +81,7 @@ You're building a site that associates data with specific variations of specific
 
 
 
+
 # Quest 4 - DC Comics
 
 You've used the Marvel API quite a bit. Let's model a comic site of our own for DC. You'll need to think about the fact that there are characters (the superheroes), comics (the actual issues), series (the collections of issues), events (which consist of many issues), artists, writers, et cetera. This is an incredibly deep rabbit hole. Create at least 5 models that would be able to provide enough information for someone to build all of our Marvel apps, but in the DC universe.
@@ -92,4 +93,4 @@ You've used the Marvel API quite a bit. Let's model a comic site of our own for 
 5. creators - string, array - authors associated with their comic works
 6. events - string, array - events associated with each character and each author involved
 7. writers - string, array - writers and their associated works
-8. artists - string, array - artists and their associated works 
+8. artists - string, array - artists and their associated works
