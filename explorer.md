@@ -94,3 +94,5 @@ You've used the Marvel API quite a bit. Let's model a comic site of our own for 
 6. events - string, array - events associated with each character and each author involved
 7. writers - string, array - writers and their associated works
 8. artists - string, array - artists and their associated works
+
+//
