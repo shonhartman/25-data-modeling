@@ -10,6 +10,15 @@ In each section below, you'll have some data described to you. List the models y
 
 NOTE! For all of these, assume you have a User model that represents the person logged into the website.
 
+## Todo List 'table/ model'
+1. name - string 'fields'
+
+## Todo Item
+
+1. completed - boolean -
+2. todo_list_id - int
+3. item - string
+4. completed_at - datetime -
 
 
 # Quest 1 - Medium Clone
@@ -53,12 +62,36 @@ You're creating a simple Medium clone where people can write blog posts and comm
 
 You're creating a Twitter clone. People can create tweets, follow other people and have followers. Keep in mind, unlike the blog post example where a comment is a separate entity, tweets responding to other tweets are still just tweets. Also, think about how Twitter turns a tweet into useful information. Do you think they scan tweets for @mentions and hashtags, or are they storing that kind of thing as additional fields? What models do we need to recreate Twitter?
 
-1. card - array - collection of objects attributed to each tweet
 2. description - string - description of user
-3. site_url - string - @username card attributed to each tweet
 4. image_url - strings - avatar and uploaded images
-5. data - string - data encompassed in user tweets
 6. categories - string, array - hashtags categories
+
+##Home Post Model
+1. site_url - string - @username card attributed to each tweet
+2. data - string - data encompassed in user tweets
+3. created_at - datetime - when the todo was created
+4. image_url - string - avatar and uploaded images
+5. reply button_url - string - url for reply card
+6. retweet button - boolean - if true, post to user_id
+7. like button - boolean - if true, show liked
+
+##Category Post Model
+1. site_url - string - @username card attributed to each tweet
+2. data - string - data encompassed in user tweets
+3. created_at - datetime - when the todo was created
+4. image_url - string - avatar and uploaded images
+5. reply button_url - string - url for reply card
+6. retweet button - boolean - if true, post to user_id
+7. like button - boolean - if true, show liked
+
+##Private Message Model
+1. site_url - string - @username card attributed to private message
+2. data - string - data encompassed in private message
+3. created_at - datetime - when the todo was created
+4. image_url - string - avatar and uploaded images
+5. reply button_url - string - url for reply card
+
+
 
 
 
@@ -67,17 +100,26 @@ You're creating a Twitter clone. People can create tweets, follow other people a
 
 You're building a site that associates data with specific variations of specific cars. You need to break the data down from the manufacturer to the specific model. In other words, you need to model in such detail that the system knows that a 2007 Mustang and a 2013 Mustang are the _same_ thing (from the 5th Generation, 2005-2014), but that a 2015 Mustang is different from both of those. The car models should also know general information about the cars.
 
+##Car Make table
 1. make - string - the make of the vehicle
-2. model - string - model attributed to each vehicle
-3. style - string, number - the style of the vehicle for instance Nissan Rogue 'SV'
-4. year - number - the year the vehicle was manufactured
-5. engine - string, number - the engine specifications
-6. transmission - string - standard or automatic
-7. image_url - string - the images associated with each vehicle
-8. miles per gallon - number - estimated miles per gallon of each vehicle
-9. exterior color - string - the vehicles exterior color
-10. interior color - string - the vehicles interior color
-11. VIN - string, number - the unique identifier for each vehicle
+2. year - number - the year the vehicle was manufactured
+
+##Car Model table
+1. model - string - model attributed to each vehicle
+
+##Style Table
+1. style - string, number - the style of the vehicle for instance Nissan Rogue 'SV' or 'SV2'
+2. exterior color - string - the vehicles exterior color
+3. interior color - string - the vehicles interior color
+
+##Features table
+1. image_url - string - the images associated with each vehicle
+2. miles per gallon - number - estimated miles per gallon of each vehicle
+3. engine - string, number - the engine specifications (probably new table)
+4. transmission - boolean - standard or automatic (set default to true for either)
+
+
+
 
 
 
@@ -86,13 +128,45 @@ You're building a site that associates data with specific variations of specific
 
 You've used the Marvel API quite a bit. Let's model a comic site of our own for DC. You'll need to think about the fact that there are characters (the superheroes), comics (the actual issues), series (the collections of issues), events (which consist of many issues), artists, writers, et cetera. This is an incredibly deep rabbit hole. Create at least 5 models that would be able to provide enough information for someone to build all of our Marvel apps, but in the DC universe.
 
-1. characters - string - each character in the DC universe
 2. description - string - a description for each character
 3. image_url - string - images associated with each characters
 4. comics - string, array - a list of all DC comics
 5. creators - string, array - authors associated with their comic works
-6. events - string, array - events associated with each character and each author involved
+
 7. writers - string, array - writers and their associated works
 8. artists - string, array - artists and their associated works
 
-//
+##Character Model
+1. characters - string - each character in the DC universe
+2. character id - number
+3. events - string, array - events associated with each character and each author involved
+##Comics Model
+
+##Creators Model
+
+##Events Model
+
+##Series Model
+
+##Stories Model
+
+
+///////////////////////////////////////////////////////////////////////LECTURE NOTES
+
+//Subaru
+
+##Vehicle Model
+1. name
+2. year
+3. price
+4. mpg
+
+##Color Image Model
+1. color_image_id
+2. color_circle
+
+##3D Image Model
+1. image_urls
+2. color_image_id
+3. coordinates
+4. interior/ exterior 3D - boolean
