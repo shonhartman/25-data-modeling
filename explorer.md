@@ -128,27 +128,72 @@ You're building a site that associates data with specific variations of specific
 
 You've used the Marvel API quite a bit. Let's model a comic site of our own for DC. You'll need to think about the fact that there are characters (the superheroes), comics (the actual issues), series (the collections of issues), events (which consist of many issues), artists, writers, et cetera. This is an incredibly deep rabbit hole. Create at least 5 models that would be able to provide enough information for someone to build all of our Marvel apps, but in the DC universe.
 
-2. description - string - a description for each character
-3. image_url - string - images associated with each characters
-4. comics - string, array - a list of all DC comics
-5. creators - string, array - authors associated with their comic works
 
-7. writers - string, array - writers and their associated works
-8. artists - string, array - artists and their associated works
+
+
 
 ##Character Model
 1. characters - string - each character in the DC universe
-2. character id - number
-3. events - string, array - events associated with each character and each author involved
-##Comics Model
-
-##Creators Model
-
-##Events Model
+2. character_id - number
+3. event_id - string, array - events associated with each character and each author involved
+4. series_id - number
+5. image_url - string - images associated with each characters
+6. description - string - a description for each character
+7. stories_id - string
+8. creator_id - string
+9. event_id - number
 
 ##Series Model
+1. character_id - number
+2. image_url - string
 
 ##Stories Model
+1. character_id - number
+2. image_url - string
+
+##Comics Model
+1. comics - string, array - a list of all DC comics
+2. comic_id - number
+3. character_id - number
+4. image_url - string
+
+##Creators Model
+1. creator_id - number
+2. character_id - number
+3. writers - string, array - writers and their associated works
+4. creators - string, array - authors associated with their comic works
+5. artists - string, array - artists and their associated works
+6. comic_id - number
+7. event_id - number
+8. series_id - number
+9. stories_id - number
+
+##Events Model
+1. event_id - number
+2. image_url - string
+3. character_id - number
+4. creator_id - number
+5. series_id - number
+6. stories_id - number
+
+##Series Model
+1. series_id - number
+2. image_url - string
+3. event_id - number
+4. image_url - string
+5. character_id - number
+6. creator_id - number
+7. stories_id - number
+
+##Stories Model
+1. stories_id - number
+2. image_url - string
+3. series_id - number
+4. event_id - number
+5. image_url - string
+6. character_id - number
+7. creator_id - number
+
 
 
 ///////////////////////////////////////////////////////////////////////LECTURE NOTES
@@ -170,3 +215,51 @@ You've used the Marvel API quite a bit. Let's model a comic site of our own for 
 2. color_image_id
 3. coordinates
 4. interior/ exterior 3D - boolean
+
+##Articles Model
+1. Image
+2. title
+3. blurb
+4. order
+
+##Article Cars
+1. vehicle_ids
+2. article_ids
+3. priority_ids
+
+//Build Your Own WRX STI
+
+##Build Model
+1. interior_color_id
+2. exterior_color_id
+
+##Color Model
+1. name
+2. order
+3. image
+4. interior
+
+##Color Options
+1. exterior_color_id
+2. interior_color_id
+
+##Package Model
+1. prices
+2. description
+
+##Build Package Model
+1. build_id
+2. package_id
+
+##Accessories Model
+1. prices
+2. name
+3. category_id
+4. description
+
+##Accessory Build
+1. accessory_id
+2. build_id
+
+##Category Model
+1. name
